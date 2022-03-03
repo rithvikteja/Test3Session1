@@ -5,15 +5,17 @@ int input_n_and_r(int *n,int *r)
   scanf("%d%d",n,r);
   return 0;  
 }
- int fact(int n)
+int ncr(int n,int r)
 {
-  int i,ncr,r,sum=1;
-  ncr=fact(n)/fact(r)*fact(n-r);
-  for(i=1;i<=n;i++)
+  int fact(int n),ncr,sum; 
+  int i;
+  ncr=fact(n)/fact(r)*fact(n-r);  
+for(i=1;i<=n;i++)
   {
     sum=sum*i;
   }
   return sum;
+
   }
   void output(int n,int r,int sum)
   {
@@ -21,11 +23,10 @@ int input_n_and_r(int *n,int *r)
   }
   int main()
   {
-    int n,r;
+    int n,r,ncr;
     input_n_and_r(&n,&r);
-    fact(n);
-    int sum;
-    output(n,r,sum);
+    ncr(n,r)
+    output(n,r,ncr);
     return 0;
       }
       
