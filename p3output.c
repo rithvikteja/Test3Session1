@@ -1,32 +1,36 @@
 #include<stdio.h>
-int input_n_and_r(int *n,int *r)
+int input(int *n,int *r)
 {
-  printf("enter the value of n and r\n");
+  printf("enter the values of n and r\n");
   scanf("%d%d",n,r);
-  return 0;  
 }
 int ncr(int n,int r)
 {
-  int fact(int n),ncr,sum; 
-  int i;
-  ncr=fact(n)/fact(r)*fact(n-r);  
-for(i=1;i<=n;i++)
-  {
-    sum=sum*i;
+  int a=1,b=1,c=1,d;
+  for(int i=1;i<=n;i++)
+    {
+      a=a*i;
+    }
+  for(int i=1;i<=(n-r);i++)
+    {
+      b=b*i;
+    }
+  for(int i=1;i<=r;i++)
+    {
+      c=c*i;
+    }
+d=a/(c*b);
+  return d;
   }
-  return sum;
-
+void output(int n,int r,int result)
+{
+  printf("value of %dC%d is %d\n",n,r,result);
   }
-  void output(int n,int r,int sum)
-  {
-    printf("value of %dC%d = %d\n",n,r,sum);
+int main()
+{
+  int n,r,result;
+  input(&n,&r);
+  result=ncr(n,r);
+  output(n,r,result);
+  return 0;
   }
-  int main()
-  {
-    int n,r,ncr;
-    input_n_and_r(&n,&r);
-    ncr(n,r)
-    output(n,r,ncr);
-    return 0;
-      }
-      
